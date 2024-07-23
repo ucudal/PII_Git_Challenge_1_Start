@@ -16,7 +16,7 @@ Crear una aplicación de calculadora simple en C# donde cada estudiante del equi
 
 > Para trabajar en un proyecto en Git debes tener un repositorio. Puedes crear localmente un repositorio y luego subirlo a un servidor para que tus compañeros lo usen, o puedes clonar un repositorio compartido en un servidor; en este ejercicio usaremos esta última opción, clonando este repositorio plantilla a tu propio repositorio.
 
-- Todos los estudiantes leen todas estas instrucciones primero, luego <font color="red"> **sólo uno**</font> de ellos las ejecuta.
+- Todos los estudiantes leen todas estas instrucciones primero, luego <font color="red">**sólo uno**</font> de ellos las ejecuta.
 - <font color="red">**Uno**</font> de los estudiantes hace clic en el botón `Use this template` que aparece arriba a la derecha en esta página; luego hace clic en la opción `Create a new repository`.
 - En el cuadro de texto `Repository name`, ese estudiante escribe un nombre para el repositorio -puede usar el que quiera, incluso el que te sugiere GitHub, mientras sea único en la organización-; no cambia ninguna otra opción.
 - Verá en su navegador el nuevo repositorio, con este mismo contenido; continúen con los pasos a continuación.
@@ -28,17 +28,17 @@ Crear una aplicación de calculadora simple en C# donde cada estudiante del equi
 - **<font color="red">Cada</font>** estudiante abre una terminal y se ubica en la carpeta que eligieron para tener todos sus repositorios.
 - Luego clona el repositorio en su máquina local con el siguiente comando:
     
-  ```
+  ```bash
   git clone <url-del-repositorio>
   ```
 
-  > La <url-del-repositorio> es la dirección que aparece en el navegador luego del último de los pasos anteriores.
+  > La \<url-del-repositorio\> es la dirección que aparece en el navegador luego del último de los pasos anteriores.
 
 3. **Crear ramas para cada uno**
 
 - Cada estudiante crea su propia rama para la operación que va a implementar con el siguiente comando:
 
-  ```
+  ```bash
   git checkout -b <nombre-rama>
   ```
 
@@ -50,7 +50,7 @@ Crear una aplicación de calculadora simple en C# donde cada estudiante del equi
 
   El comando `git checkout` crea una copia local del repositorio indicado en una carpeta cuyo nombre coincide con el del repositorio. Para moverte a esa carpeta, usa el siguiente comando:
 
-  ```
+  ```bash
   cd <nombre-repositorio>
   ```
 
@@ -60,15 +60,15 @@ Crear una aplicación de calculadora simple en C# donde cada estudiante del equi
 
 - Cada estudiante abre el repositorio en Rider con el siguiente comando:
 
-  ```
+  ```bash
   rider .
   ```
 
   > Noten que hay un punto, separado por un espacio, al final del comando.
 
-  Rider les pedirá que confirmen si quieren abrir el proyecto en esa carpeta; elijan la opción `Open`. Eventualmente Rider también les preguntará si es seguro abrir el proyecto; elijan la opción `Trust and Open`.
+  Rider les pedirá que confirmen si quieren abrir el proyecto en esa carpeta; elijan la opción `Open`. Eventualmente, Rider también les preguntará si es seguro abrir el proyecto; elijan la opción `Trust and Open`.
 
-- Cada estudiante implementa su respectiva operación en una nueva clase en C#, agregando el código que aparece a continuación en el archivo `Program.cs` que está en la carpeta `src` del proyecto, inmediatamente antes de la línea que dice `public static class Program`.
+- Cada estudiante implementa su respectiva operación en una nueva clase en C#, agregando el código que aparece a continuación <font color="red">**al final**</font> del archivo `Program.cs` que está en la carpeta `src` del proyecto.
 
   > Estarás agregando nuevas clases en un mismo archivo `Program.cs`; en el futuro, cada clase se agregará en su propio archivo `.cs` -cuyo nombre coincidirá con el de la clase-, pero para este ejercicio todos agregarán sus clases en el mismo archivo. No te preocupes si no entiendes del todo el código que estás usando, el objetivo es que experimentes cómo es el desarrollo colaborativo -entre varios estudiantes- y concurrente -al mismo tiempo- en Git.
 
@@ -165,7 +165,7 @@ Vamos a suponer que mientras estás realizando cambios en el repositorio, sin ha
 
 - Ejecuta el siguiente comando para volver al código que tenías al comienzo de este paso:
 
-  ```
+  ```bash
   git stash pop
   ```
 
@@ -196,7 +196,7 @@ Hasta ahora estuvieron trabajando en la copia local del repositorio, es necesari
 
   Deberías ver varios mensajes, similares, aunque no necesariamente iguales, a los siguientes:
 
-  ```
+  ```bash
   Enumerating objects: 14, done.
   Counting objects: 100% (14/14), done.
   Delta compression using up to 8 threads
@@ -219,60 +219,63 @@ Ahora llegó el momento de "mergear" —combinar— los cambios en las ramas de 
   git pull
   ```
   
-- Luego "mergea" los cambios de su rama con los de la rama `main`, ejecutando el siguiente comando:
+  - Luego "mergea" los cambios de su rama con los de la rama `main`, ejecutando el siguiente comando:
 
-  ```bash
-  git merge <nombre-rama>
-  git push
-  ```
+    ```bash
+    git merge <nombre-rama>
+    git push
+    ```
   
-  > El <nombre-rama> es el que usaron antes; uno de los siguientes:
-  > - feature-addition
-  > - feature-subtraction
-  > - feature-multiplication
-  > - feature-division
+  >   El <nombre-rama> es el que usaron antes; uno de los siguientes:
+  >   - feature-addition
+  >   - feature-subtraction
+  >   - feature-multiplication
+  >   - feature-division
 
-  En caso de que haya conflictos, verán un mensaje como el siguiente:
+    En caso de que haya conflictos, verán un mensaje como el siguiente:
   
-  ```
-  Auto-merging src/Program/Program.cs
-  CONFLICT (content): Merge conflict in src/Program/Program.cs
-  Automatic merge failed; fix conflicts and then commit the result.
-  ```
+    ```bash
+    Auto-merging src/Program/Program.cs
+    CONFLICT (content): Merge conflict in src/Program/Program.cs
+    Automatic merge failed; fix conflicts and then commit the result.
+    ```
   
-  El código en `Program.cs` luce similar al que aparece a continuación, con unos marcadores `<<<<<<<`, `=======`, y `>>>>>>>`:
+    El código en `Program.cs` luce similar al que aparece a continuación, con unos marcadores `<<<<<<<`, `=======`, y `>>>>>>>`:
   
-  ```csharp
-  namespace Ucu.Poo.GitChallenge;
-  <<<<<<< HEAD
-  ⃛⃛⋯
-  =======
-  ⋯
-  >>>>>>>
-  public static class Program
-  {
+    ```csharp
+    namespace Ucu.Poo.GitChallenge;
+  
+    public static class Program
+    {
       public static void Main()
       {
-          Console.WriteLine("Hello World!");
+      Console.WriteLine(Suma.Sumar(1, 2));
+      Console.WriteLine(Resta.Restar(3, 4));
+      Console.WriteLine(Multiplicacion.Multiplicar(5, 6));
+      Console.WriteLine(Division.Dividir(7, 8));
       }
-  }
-  ```
+    }
+    <<<<<<< HEAD
+    ⋯
+    =======
+    ⋯
+    >>>>>>>
+    ```
   
-  Lo que está entre `<<<<<<<` y `=======` es lo que está en conflicto en la rama actual `main`; lo que está entre `=======` y `>>>>>>>` es lo que está en conflicto en la rama que están "mergeando". Git no puede resolver el conflicto, deben hacerlo ustedes.
+    Lo que está entre `<<<<<<<` y `=======` es lo que está en conflicto en la rama actual `main`; lo que está entre `=======` y `>>>>>>>` es lo que está en conflicto en la rama que están "mergeando". Git no puede resolver el conflicto, deben hacerlo ustedes.
   
-  En este caso, ambas clases deben quedar en el archivo, por lo tanto, basta borrar los marcadores. En otros casos, la resolución del conflicto será diferente. En cualquier caso, el código final no debe incluir los marcadores.
+    En este caso, ambas modificaciones deben quedar en el archivo, por lo tanto, basta borrar los marcadores. En otros casos, la resolución del conflicto será diferente. En cualquier caso, el código final no debe incluir los marcadores.
   
-  Para terminar, "comiteen" y "pusheen" los cambios:
+    Para terminar, "comiteen" y "pusheen" los cambios:
   
-  ```bash
-  git commit -m "Resolución de conflictos"
-  git push
-  ```
+    ```bash
+    git commit -m "Resolución de conflictos"
+    git push
+    ```
 
+## Ejemplo Final de Código
 
-
-### Ejemplo Final de Código
-Después de fusionar todas las características, el programa principal podría verse así:
+Después de "mergear" todas las contribuciones de los miembros del equipo, el programa debería verse más o menos así:
 
 ```csharp
 namespace Ucu.Poo.GitChallenge;
@@ -281,7 +284,10 @@ public static class Program
 {
     public static void Main()
     {
-        Console.WriteLine("Hello World!");
+        Console.WriteLine(Suma.Sumar(1, 2));
+        Console.WriteLine(Resta.Restar(3, 4));
+        Console.WriteLine(Multiplicacion.Multiplicar(5, 6));
+        Console.WriteLine(Division.Dividir(7, 8));
     }
 }
 
@@ -317,8 +323,3 @@ public class Division
     }
 }
 ```
-
-### Notas
-- Asegúrate de que todos los estudiantes tengan Git y un entorno de desarrollo C# configurado.
-- Fomenta la comunicación y colaboración durante el ejercicio.
-- Aborda cualquier conflicto que surja durante las fusiones como una oportunidad de aprendizaje.

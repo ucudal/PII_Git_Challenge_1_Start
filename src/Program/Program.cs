@@ -1,7 +1,4 @@
-﻿using System.Numerics;
-using System.Xml;
-
-namespace Ucu.Poo.GitChallenge;
+﻿namespace Ucu.Poo.GitChallenge;
 
 public static class Program
 {
