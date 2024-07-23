@@ -10,146 +10,141 @@
 ## Objetivo
 Crear una aplicación de calculadora simple en C# donde cada estudiante del equipo contribuya con una operación diferente (suma, resta, multiplicación, división). Los estudiantes practicarán los siguientes comandos de Git: [clone](https://git-scm.com/docs/git-clone), [checkout](https://git-scm.com/docs/git-checkout), [pull](https://git-scm.com/docs/git-pull), [add](https://git-scm.com/docs/git-add), [commit](https://git-scm.com/docs/git-commit), [stash](https://git-scm.com/docs/git-stash) y [push](https://git-scm.com/docs/git-push).
 
-### Pasos
+## Pasos
 
-1. **Configurar el Repositorio**
-   - Un estudiante (Estudiante A) inicializa un repositorio Git en una plataforma como GitHub o GitLab y agrega la estructura base del proyecto de la calculadora.
+1. **Crear un repositorio a partir de esta plantilla**
 
-   ```bash
-   git init
-   git add .
-   git commit -m "Commit inicial con estructura base del proyecto"
-   git remote add origin <url-del-repositorio>
-   git push -u origin master
-   ```
+> Para trabajar en un proyecto en Git debes tener un repositorio. Puedes crear localmente un repositorio y luego subirlo a un servidor para que tus compañeros lo usen, o puedes clonar un repositorio compartido en un servidor; en este ejercicio usaremos esta última opción, clonando este repositorio plantilla a tu propio repositorio.
+
+- Todos los estudiantes leen todas estas instrucciones primero, luego <font color="red"> **sólo uno**</font> de ellos las ejecuta.
+- <font color="red">**Uno**</font> de los estudiantes hace clic en el botón `Use this template` que aparece arriba a la derecha en esta página; luego hace clic en la opción `Create a new repository`.
+- En el cuadro de texto `Repository name`, ese estudiante escribe un nombre para el repositorio -puede usar el que quiera, incluso el que te sugiere GitHub, mientras sea único en la organización-; no cambia ninguna otra opción.
+- Verá en su navegador el nuevo repositorio, con este mismo contenido; continúen con los pasos a continuación.
 
 2. **Clonar el Repositorio**
-   - Todos los estudiantes clonan el repositorio en sus máquinas locales.
 
-   ```bash
-   git clone <url-del-repositorio>
-   ```
+> Te recomendamos que elijas una carpeta -o que crees una nueva- para todos los repositorios del curso. Recuerda cómo llegar a esa capeta desde la línea de comandos -puedes volver consultar [este documento](https://github.com/ucudal/PII_Comandos/blob/master/Consola.md) si fuera necesario-.
 
-3. **Crear Ramas de Características**
-   - Cada estudiante crea su propia rama para la característica que va a implementar.
+- **<font color="red">Cada</font>** estudiante abre una terminal y se ubica en la carpeta que eligieron para tener todos sus repositorios.
+- Luego clona el repositorio en su máquina local con el siguiente comando:
+    
+  ```
+  git clone <url-del-repositorio>
+  ```
 
-   ```bash
-   git checkout -b feature-addition
-   git checkout -b feature-subtraction
-   git checkout -b feature-multiplication
-   git checkout -b feature-division
-   ```
+  > La <url-del-repositorio> es la dirección que aparece en el navegador luego del último de los pasos anteriores.
 
-4. **Implementar Características**
-   - Cada estudiante implementa su respectiva operación en una nueva clase en C#.
+3. **Crear ramas para cada uno**
 
-   ```csharp
-   // Estudiante A (Suma)
-   public class Suma
-   {
-       public static int Sumar(int a, int b)
-       {
-           return a + b;
-       }
-   }
+- Cada estudiante crea su propia rama para la operación que va a implementar con el siguiente comando:
 
-   // Estudiante B (Resta)
-   public class Resta
-   {
-       public static int Restar(int a, int b)
-       {
-           return a - b;
-       }
-   }
+  ```
+  git checkout -b <nombre-rama>
+  ```
 
-   // Estudiante C (Multiplicación)
-   public class Multiplicacion
-   {
-       public static int Multiplicar(int a, int b)
-       {
-           return a * b;
-       }
-   }
+  > El <nombre-rama> corresponde a la operación que cada estudiante va a implementar; es uno de los siguientes:
+  > - feature-addition
+  > - feature-subtraction
+  > - feature-multiplication
+  > - feature-division
 
-   // Estudiante D (División)
-   public class Division
-   {
-       public static double Dividir(int a, int b)
-       {
-           return (double)a / b;
-       }
-   }
-   ```
+  El comando `git checkout` crea una copia local del repositorio indicado en una carpeta cuyo nombre coincide con el del repositorio. Para moverte a esa carpeta, usa el siguiente comando:
 
-5. **Añadir y Commit Changes**
-   - Después de implementar sus características, los estudiantes añaden y comitean sus cambios.
+  ```
+  cd <nombre-repositorio>
+  ```
 
-   ```bash
-   git add .
-   git commit -m "Implementar característica de suma"
-   git commit -m "Implementar característica de resta"
-   git commit -m "Implementar característica de multiplicación"
-   git commit -m "Implementar característica de división"
-   ```
+  > El <nombre-repositorio> es el que hayan elegido en el paso 1. Puedes ver todas las carpetas en el directorio actual con los comandos `ls` ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white) y ![linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) o `dir` ![windows](https://img.shields.io/badge/Windows-0078D6?style=flat&logo=windows&logoColor=white).
 
-6. **Guardar Cambios (Opcional)**
-   - Si un estudiante necesita cambiar de rama y tiene cambios sin comitear, puede guardar sus cambios.
+4. **Implementar la operación**
 
-   ```bash
-   git stash
-   ```
+- Cada estudiante abre el repositorio en Rider con el siguiente comando:
 
-7. **Enviar Cambios**
-   - Los estudiantes envían sus cambios al repositorio remoto.
+  ```
+  rider .
+  ```
 
-   ```bash
-   git push origin feature-addition
-   git push origin feature-subtraction
-   git push origin feature-multiplication
-   git push origin feature-division
-   ```
+  > Noten que hay un punto, separado por un espacio, al final del comando.
 
-8. **Obtener Cambios**
-   - Antes de fusionar sus ramas, los estudiantes deben obtener los últimos cambios de la rama master para asegurarse de que no haya conflictos.
+  Rider les pedirá que confirmen si quieren abrir el proyecto en esa carpeta; elijan la opción `Open`. Eventualmente Rider también les preguntará si es seguro abrir el proyecto; elijan la opción `Trust and Open`.
 
-   ```bash
-   git checkout master
-   git pull origin master
-   ```
+- Cada estudiante implementa su respectiva operación en una nueva clase en C#, agregando el código que aparece a continuación en el archivo `Program.cs` que está en la carpeta `src` del proyecto, inmediatamente antes de la línea que dice `public static class Program`.
 
-9. **Crear Pull Requests**
-   - Los estudiantes crean pull requests para que sus características sean revisadas y fusionadas en la rama master.
+  > Estarás agregando nuevas clases en un mismo archivo `Program.cs`; en el futuro, cada clase se agregará en su propio archivo `.cs` -cuyo nombre coincidirá con el de la clase-, pero para este ejercicio todos agregarán sus clases en el mismo archivo. No te preocupes si no entiendes del todo el código que estás usando, el objetivo es que experimentes cómo es el desarrollo colaborativo -entre varios estudiantes- y concurrente -al mismo tiempo- en Git.
 
-10. **Revisar y Fusionar**
-    - El propietario del repositorio revisa los pull requests y los fusiona en la rama master.
+  Estudiante A (suma):
+  ```csharp
+  public class Suma
+  {
+     public static int Sumar(int a, int b)
+     {
+         return a + b;
+     }
+  }
+  ```
+  
+  Estudiante B (resta):
+  ```csharp
+  public class Resta
+  {
+     public static int Restar(int a, int b)
+     {
+         return a - b;
+     }
+  }
+  ```
+  
+  Estudiante C (multiplicación):
+  ```csharp
+  public class Multiplicacion
+  {
+     public static int Multiplicar(int a, int b)
+     {
+         return a * b;
+     }
+  }
+  ```
+  
+  Estudiante D (división):
+  ```csharp
+  public class Division
+  {
+     public static double Dividir(int a, int b)
+     {
+         return (double)a / b;
+     }
+  }
+  ```
 
-### Ejemplo Final de Código
-Después de fusionar todas las características, el programa principal podría verse así:
+5. **Agregar y "comitear" los cambios**
 
-```csharp
-using System;
+> El verbo `comitear` no existe, pero los desarrolladores lo usamos igual y entre nosotros nos entendemos 😀.
 
-namespace CalculadoraColaborativa
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Suma: " + Suma.Sumar(5, 3));
-            Console.WriteLine("Resta: " + Resta.Restar(5, 3));
-            Console.WriteLine("Multiplicación: " + Multiplicacion.Multiplicar(5, 3));
-            Console.WriteLine("División: " + Division.Dividir(5, 3));
-        }
-    }
+- Después de implementar sus operaciones, los estudiantes agregan y comitean sus cambios con los siguientes comandos:
 
-    public class Suma
-    {
-        public static int Sumar(int a, int b)
-        {
-            return a + b;
-        }
-    }
+  ```bash
+  git add .
+  git commit -m "Implementación de la operación <nombre de la operación>"
+  ```
+  
+  > Puedes ejecutar estos comandos en la terminal que venías usando. Rider incluye también una terminal a la que puedes acceder con el comando `View | Tool Windows | Terminal` o mediante el ícono ![](https://intellij-icons.jetbrains.design/icons/TerminalIcons/icons/expui/toolwindow/terminal@20x20.svg) que aparece abajo a la izquierda.
 
+6. **Guardar temporalmente los cambios**
+
+Vamos a suponer que mientras estás realizando cambios en el repositorio, sin haber finalizado tu trabajo, debes hacer modificaciones sin perder los cambios que has hecho hasta el momento —es decir, tienen que poder volver a recuperarlos—; como los cambios son temporales, tampoco quieres "comitearlos".
+
+- Cada estudiante agrega la siguiente línea de comentario inmediatamente antes del código que agregaron en el paso anterior:
+
+    ```csharp
+    // Esta clase implementa la operación <nombre-operación>
+    ```
+
+    > Reemplaza <nombre-operación> según corresponda
+    
+    Por ejemplo, para la operación de la resta, el código debería quedar así:
+    
+    ```csharp
+    // Esta clase implementa la operación resta
     public class Resta
     {
         public static int Restar(int a, int b)
@@ -157,21 +152,168 @@ namespace CalculadoraColaborativa
             return a - b;
         }
     }
+    ```
 
-    public class Multiplicacion
+- Guarda estos cambios temporalmente, sin "comitearlos", para poder realizar otras modificaciones.
+
+  ```bash
+  git stash
+  ```
+  
+  El código vuelva a quedar como estaba luego de ejecutar el comando `git commit` en el paso 5.
+
+
+- Ejecuta el siguiente comando para volver al código que tenías al comienzo de este paso:
+
+  ```
+  git stash pop
+  ```
+
+7. **Enviar los cambios**
+
+Hasta ahora estuvieron trabajando en la copia local del repositorio, es necesario enviar los cambios al repositorio que está en el servidor.
+
+- Cada estudiante agrega y "comitea" los últimos cambios —el comentario que agregaron en el paso anterior-:
+
+  ```bash
+  git add .
+  git commit -m "Comentario agregado"
+  ```
+
+  > Noten que hay un espacio, seguido de un punto, al final del comando `add`.
+
+- Cada estudiante envía sus cambios al repositorio remoto.
+
+  ```bash
+  git push origin <nombre-rama>
+  ```
+
+  > El <nombre-rama> es el que usaron antes; uno de los siguientes:
+  > - feature-addition
+  > - feature-subtraction
+  > - feature-multiplication
+  > - feature-division
+
+  Deberías ver varios mensajes, similares, aunque no necesariamente iguales, a los siguientes:
+
+  ```
+  Enumerating objects: 14, done.
+  Counting objects: 100% (14/14), done.
+  Delta compression using up to 8 threads
+  Compressing objects: 100% (8/8), done.
+  Writing objects: 100% (10/10), 931 bytes | 931.00 KiB/s, done.
+  Total 10 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+  ...
+  ```
+
+8. **Obtener cambios y "mergear"**
+
+> El verbo mergear tampoco existe, pero al igual que sucede con comitear, los desarrolladores lo usamos y nos entendemos entre nosotros 😀.
+
+Ahora llegó el momento de "mergear" —combinar— los cambios en las ramas de trabajo con la rama principal. Antes de "mergear" sus cambios deben obtener los cambios de los compañeros. Dependiendo del orden en el que hagan el trabajo, puede haber conflictos, que deberán resolver.
+
+- Antes de "mergear" sus ramas, cada estudiante debe obtener los últimos cambios de la rama `main`.
+
+  ```bash
+  git checkout master
+  git pull
+  ```
+  
+- Luego "mergea" los cambios de su rama con los de la rama `main`, ejecutando el siguiente comando:
+
+  ```bash
+  git merge <nombre-rama>
+  git push
+  ```
+  
+  > El <nombre-rama> es el que usaron antes; uno de los siguientes:
+  > - feature-addition
+  > - feature-subtraction
+  > - feature-multiplication
+  > - feature-division
+
+  En caso de que haya conflictos, verán un mensaje como el siguiente:
+  
+  ```
+  Auto-merging src/Program/Program.cs
+  CONFLICT (content): Merge conflict in src/Program/Program.cs
+  Automatic merge failed; fix conflicts and then commit the result.
+  ```
+  
+  El código en `Program.cs` luce similar al que aparece a continuación, con unos marcadores `<<<<<<<`, `=======`, y `>>>>>>>`:
+  
+  ```csharp
+  namespace Ucu.Poo.GitChallenge;
+  <<<<<<< HEAD
+  ⃛⃛⋯
+  =======
+  ⋯
+  >>>>>>>
+  public static class Program
+  {
+      public static void Main()
+      {
+          Console.WriteLine("Hello World!");
+      }
+  }
+  ```
+  
+  Lo que está entre `<<<<<<<` y `=======` es lo que está en conflicto en la rama actual `main`; lo que está entre `=======` y `>>>>>>>` es lo que está en conflicto en la rama que están "mergeando". Git no puede resolver el conflicto, deben hacerlo ustedes.
+  
+  En este caso, ambas clases deben quedar en el archivo, por lo tanto, basta borrar los marcadores. En otros casos, la resolución del conflicto será diferente. En cualquier caso, el código final no debe incluir los marcadores.
+  
+  Para terminar, "comiteen" y "pusheen" los cambios:
+  
+  ```bash
+  git commit -m "Resolución de conflictos"
+  git push
+  ```
+
+
+
+### Ejemplo Final de Código
+Después de fusionar todas las características, el programa principal podría verse así:
+
+```csharp
+namespace Ucu.Poo.GitChallenge;
+
+public static class Program
+{
+    public static void Main()
     {
-        public static int Multiplicar(int a, int b)
-        {
-            return a * b;
-        }
+        Console.WriteLine("Hello World!");
     }
+}
 
-    public class Division
+public class Suma
+{
+    public static int Sumar(int a, int b)
     {
-        public static double Dividir(int a, int b)
-        {
-            return (double)a / b;
-        }
+        return a + b;
+    }
+}
+
+public class Resta
+{
+    public static int Restar(int a, int b)
+    {
+        return a - b;
+    }
+}
+
+public class Multiplicacion
+{
+    public static int Multiplicar(int a, int b)
+    {
+        return a * b;
+    }
+}
+
+public class Division
+{
+    public static double Dividir(int a, int b)
+    {
+        return (double)a / b;
     }
 }
 ```
