@@ -1,8 +1,8 @@
 <img alt="UCU" src="https://www.ucu.edu.uy/plantillas/images/logo_ucu.svg" width="150"/>
 
-### Universidad Católica del Uruguay
+# Universidad Católica del Uruguay
 ## Facultad de Ingeniería y Tecnologías
-## Programación II
+### Programación II
 
 
 # Desafío Git #1: Calculadora Colaborativa
@@ -10,33 +10,37 @@
 ## Objetivo
 Crear una aplicación de calculadora simple en C# donde cada estudiante del equipo contribuya con una operación diferente (suma, resta, multiplicación, división). Los estudiantes practicarán los siguientes comandos de Git: [clone](https://git-scm.com/docs/git-clone), [checkout](https://git-scm.com/docs/git-checkout), [pull](https://git-scm.com/docs/git-pull), [add](https://git-scm.com/docs/git-add), [commit](https://git-scm.com/docs/git-commit), [stash](https://git-scm.com/docs/git-stash) y [push](https://git-scm.com/docs/git-push).
 
+> [!NOTE]
+> El código provisto inicialmente en este repositorio no compila; los cambios que harás con tu equipo durante esta actividad lograrán que compile y funcione.
+
 ## Pasos
 
 1. **Crear un repositorio a partir de esta plantilla**
 
-> Para trabajar en un proyecto en Git debes tener un repositorio. Puedes crear localmente un repositorio y luego subirlo a un servidor para que tus compañeros lo usen, o puedes clonar un repositorio compartido en un servidor; en este ejercicio usaremos esta última opción, clonando este repositorio plantilla a tu propio repositorio.
+Para trabajar en un proyecto en Git debes tener un repositorio. Puedes crear localmente un repositorio y luego subirlo a un servidor para que tus compañeros lo usen, o puedes clonar un repositorio compartido en un servidor; en este ejercicio usaremos esta última opción, clonando este repositorio plantilla a tu propio repositorio.
 
-- Todos los estudiantes leen todas estas instrucciones primero, luego <font color="red">**sólo uno**</font> de ellos las ejecuta.
+- En este paso, todos los estudiantes leen todas estas instrucciones primero, luego <font color="red">**sólo uno**</font> de ellos las ejecuta.
 - <font color="red">**Uno**</font> de los estudiantes hace clic en el botón `Use this template` que aparece arriba a la derecha en esta página; luego hace clic en la opción `Create a new repository`.
 - En el cuadro de texto `Repository name`, ese estudiante escribe un nombre para el repositorio -puede usar el que quiera, incluso el que te sugiere GitHub, mientras sea único en la organización-; no cambia ninguna otra opción.
 - Verá en su navegador el nuevo repositorio, con este mismo contenido; continúen con los pasos a continuación.
 
 2. **Clonar el Repositorio**
 
+> [!TIP]
 > Te recomendamos que elijas una carpeta -o que crees una nueva- para todos los repositorios del curso. Recuerda cómo llegar a esa capeta desde la línea de comandos -puedes volver consultar [este documento](https://github.com/ucudal/PII_Comandos/blob/master/Consola.md) si fuera necesario-.
 
 - **<font color="red">Cada</font>** estudiante abre una terminal y se ubica en la carpeta que eligieron para tener todos sus repositorios.
-- Luego clona el repositorio en su máquina local con el siguiente comando:
-    
+- Luego clona el repositorio en su máquina local con [git clone](https://git-scm.com/docs/git-clone), ejecutando el siguiente comando en la terminal:
+
   ```bash
   git clone <url-del-repositorio>
   ```
 
-  > La \<url-del-repositorio\> es la dirección que aparece en el navegador luego del último de los pasos anteriores.
+  > La <url-del-repositorio> es la dirección que aparece en el navegador luego del último de los pasos anteriores.
 
 3. **Crear ramas para cada uno**
 
-- Cada estudiante crea su propia rama para la operación que va a implementar con el siguiente comando:
+- Cada estudiante crea su propia rama para la operación que va a implementar con , [git checkout](https://git-scm.com/docs/git-checkout), ejecutando el siguiente comando en la terminal:
 
   ```bash
   git checkout -b <nombre-rama>
@@ -82,7 +86,7 @@ Crear una aplicación de calculadora simple en C# donde cada estudiante del equi
      }
   }
   ```
-  
+
   Estudiante B (resta):
   ```csharp
   public class Resta
@@ -93,7 +97,7 @@ Crear una aplicación de calculadora simple en C# donde cada estudiante del equi
      }
   }
   ```
-  
+
   Estudiante C (multiplicación):
   ```csharp
   public class Multiplicacion
@@ -104,7 +108,7 @@ Crear una aplicación de calculadora simple en C# donde cada estudiante del equi
      }
   }
   ```
-  
+
   Estudiante D (división):
   ```csharp
   public class Division
@@ -120,14 +124,14 @@ Crear una aplicación de calculadora simple en C# donde cada estudiante del equi
 
 > El verbo `comitear` no existe, pero los desarrolladores lo usamos igual y entre nosotros nos entendemos 😀.
 
-- Después de implementar sus operaciones, los estudiantes agregan y comitean sus cambios con los siguientes comandos:
+- Después de implementar sus operaciones, los estudiantes agregan y comitean sus cambios con [git add](https://git-scm.com/docs/git-add) y [git commit](https://git-scm.com/docs/git-commit), ejecutando los siguientes comandos en la terminal:
 
   ```bash
   git add .
   git commit -m "Implementación de la operación <nombre de la operación>"
   ```
-  
-  > Puedes ejecutar estos comandos en la terminal que venías usando. Rider incluye también una terminal a la que puedes acceder con el comando `View | Tool Windows | Terminal` o mediante el ícono ![](https://intellij-icons.jetbrains.design/icons/TerminalIcons/icons/expui/toolwindow/terminal@20x20.svg) que aparece abajo a la izquierda.
+
+  > Puedes ejecutar estos comandos en la terminal que venías usando. Rider incluye también una terminal a la que puedes acceder con el comando `View | Tool Windows | Terminal` o mediante el ícono ![](https://intellij-icons.jetbrains.design/icons/TerminalIcons/icons/expui/toolwindow/terminal@20x20.svg) que aparece abajo a la izquierda. De forma predeterminada, la terminal del Rider se abre en la carpeta raíz del proyecto que tienes abierto.
 
 6. **Guardar temporalmente los cambios**
 
@@ -140,9 +144,9 @@ Vamos a suponer que mientras estás realizando cambios en el repositorio, sin ha
     ```
 
     > Reemplaza <nombre-operación> según corresponda
-    
+
     Por ejemplo, para la operación de la resta, el código debería quedar así:
-    
+
     ```csharp
     // Esta clase implementa la operación resta
     public class Resta
@@ -154,12 +158,12 @@ Vamos a suponer que mientras estás realizando cambios en el repositorio, sin ha
     }
     ```
 
-- Guarda estos cambios temporalmente, sin "comitearlos", para poder realizar otras modificaciones.
+- Guarda estos cambios temporalmente con [git stash](https://git-scm.com/docs/git-stash), sin "comitearlos", para poder realizar otras modificaciones.
 
   ```bash
   git stash
   ```
-  
+
   El código vuelva a quedar como estaba luego de ejecutar el comando `git commit` en el paso 5.
 
 
@@ -182,7 +186,7 @@ Hasta ahora estuvieron trabajando en la copia local del repositorio, es necesari
 
   > Noten que hay un espacio, seguido de un punto, al final del comando `add`.
 
-- Cada estudiante envía sus cambios al repositorio remoto.
+- Cada estudiante envía sus cambios al repositorio remoto con [git push](https://git-scm.com/docs/git-push), ejecutando el siguiente comando en la terminal:
 
   ```bash
   git push origin <nombre-rama>
@@ -212,20 +216,20 @@ Hasta ahora estuvieron trabajando en la copia local del repositorio, es necesari
 
 Ahora llegó el momento de "mergear" —combinar— los cambios en las ramas de trabajo con la rama principal. Antes de "mergear" sus cambios deben obtener los cambios de los compañeros. Dependiendo del orden en el que hagan el trabajo, puede haber conflictos, que deberán resolver.
 
-- Antes de "mergear" sus ramas, cada estudiante debe obtener los últimos cambios de la rama `main`.
+- Antes de "mergear" sus ramas, cada estudiante debe obtener los últimos cambios de la rama `main`. Usa [git checkout](https://git-scm.com/docs/git-checkout) para cambiar la rama actual a `main` y luego usa [git pull](https://git-scm.com/docs/git-pull) para traer los cambios; ejecuta los siguientes comandos en la terminal:
 
   ```bash
   git checkout master
   git pull
   ```
-  
-  - Luego "mergea" los cambios de su rama con los de la rama `main`, ejecutando el siguiente comando:
+
+  - Luego "mergea" los cambios de su rama con los de la rama `main`, ejecutando los siguientes comandos:
 
     ```bash
     git merge <nombre-rama>
     git push
     ```
-  
+
   >   El <nombre-rama> es el que usaron antes; uno de los siguientes:
   >   - feature-addition
   >   - feature-subtraction
@@ -233,18 +237,18 @@ Ahora llegó el momento de "mergear" —combinar— los cambios en las ramas de 
   >   - feature-division
 
     En caso de que haya conflictos, verán un mensaje como el siguiente:
-  
+
     ```bash
     Auto-merging src/Program/Program.cs
     CONFLICT (content): Merge conflict in src/Program/Program.cs
     Automatic merge failed; fix conflicts and then commit the result.
     ```
-  
+
     El código en `Program.cs` luce similar al que aparece a continuación, con unos marcadores `<<<<<<<`, `=======`, y `>>>>>>>`:
-  
+
     ```csharp
     namespace Ucu.Poo.GitChallenge;
-  
+
     public static class Program
     {
       public static void Main()
@@ -261,13 +265,13 @@ Ahora llegó el momento de "mergear" —combinar— los cambios en las ramas de 
     ⋯
     >>>>>>>
     ```
-  
+
     Lo que está entre `<<<<<<<` y `=======` es lo que está en conflicto en la rama actual `main`; lo que está entre `=======` y `>>>>>>>` es lo que está en conflicto en la rama que están "mergeando". Git no puede resolver el conflicto, deben hacerlo ustedes.
-  
+
     En este caso, ambas modificaciones deben quedar en el archivo, por lo tanto, basta borrar los marcadores. En otros casos, la resolución del conflicto será diferente. En cualquier caso, el código final no debe incluir los marcadores.
-  
+
     Para terminar, "comiteen" y "pusheen" los cambios:
-  
+
     ```bash
     git commit -m "Resolución de conflictos"
     git push
