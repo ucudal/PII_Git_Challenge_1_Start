@@ -301,7 +301,7 @@ necesario enviar los cambios al repositorio que está en el servidor.
   git push origin <nombre-rama>
   ```
 
-  > El <nombre-rama> es el que usaron antes; uno de los siguientes:
+  > El `<nombre-rama>` es el que usaron antes; uno de los siguientes:
   > - feature-addition
   > - feature-subtraction
   > - feature-multiplication
@@ -332,29 +332,39 @@ puede haber conflictos, que deberán resolver.
 
 - Antes de "mergear" sus ramas, cada estudiante debe obtener los últimos cambios
   de la rama `main`. Usa [git checkout](https://git-scm.com/docs/git-checkout)
-  para cambiar la rama actual a `main` y luego usa [git
-  pull](https://git-scm.com/docs/git-pull) para traer los cambios; ejecuta los
-  siguientes comandos en la terminal:
+  para cambiar la rama actual a `main`; ejecuta los siguientes comandos en la
+  terminal:
 
   ```bash
   git checkout main
-  git pull
   ```
 
-  - Luego <font color="red">**de a un estudiante a la vez**</font> cada uno
-    "mergea" los cambios de su rama con los de la rama `main`, ejecutando los
-    siguientes comandos:
+  - Luego, <font color="red">**de a un estudiante a la vez**</font>, obtengan
+    los últimos cambios con [git pull](https://git-scm.com/docs/git-pull) y
+    luego "mergeen" esos cambios en la rama `main` con los de su propia rama,
+    ejecutando los siguientes comandos:
 
     ```bash
+    git pull
     git merge <nombre-rama>
     git push
     ```
 
-  >   El `<nombre-rama>` es el que usaron antes; uno de los siguientes:
-  >   - feature-addition
-  >   - feature-subtraction
-  >   - feature-multiplication
-  >   - feature-division
+  > El `<nombre-rama>` es el que usaron antes; uno de los siguientes:
+  > - feature-addition
+  > - feature-subtraction
+  > - feature-multiplication
+  > - feature-division
+
+    En caso de que no haya conflictos, aparecerá un texto como el que mostramos
+    a continuación:
+
+    ```bash
+    Updating bdd7c4d..fb5eaa0
+    Fast-forward
+    src/Program/Program.cs | 9 +++++++++
+    1 file changed, 9 insertions(+)
+    ```
 
     En caso de que haya conflictos, verán un mensaje como el siguiente:
 
@@ -363,8 +373,6 @@ puede haber conflictos, que deberán resolver.
     CONFLICT (content): Merge conflict in src/Program/Program.cs
     Automatic merge failed; fix conflicts and then commit the result.
     ```
-
-    o
 
     El código en `Program.cs` luce similar al que aparece a continuación, con
     unos marcadores `<<<<<<<`, `=======`, y `>>>>>>>`:
