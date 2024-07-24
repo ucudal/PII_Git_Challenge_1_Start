@@ -41,10 +41,11 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
   this template` que aparece arriba a la derecha en esta página; luego hace clic
   en la opción `Create a new repository`.
 - En el cuadro de texto `Repository name`, ese estudiante escribe un nombre para
-  el repositorio -puede usar el que quiera, incluso el que te sugiere GitHub,
-  mientras sea único en la organización-; no cambia ninguna otra opción.
-- Verá en su navegador el nuevo repositorio, con este mismo contenido; continúen
-  con los pasos a continuación.
+  el repositorio -puede usar el que quiera, incluso el que le sugiere GitHub,
+  mientras sea único en la organización-; no deben cambiar ninguna otra opción.
+- Verán en el navegador el nuevo repositorio, con este mismo contenido.
+  Compartan en el equipo el link al repositorio. Continúen con los pasos a
+  continuación.
 
 2. **Clonar el Repositorio**
 
@@ -65,7 +66,7 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
   git clone <url-del-repositorio>
   ```
 
-  > La <url-del-repositorio> es la dirección que aparece en el navegador luego
+  > La `<url-del-repositorio>` es la dirección que aparece en el navegador luego
   > del último de los pasos anteriores.
 
   Git muestra mensajes similares a estos; en lugar de `<nombre-repositorio>`
@@ -80,10 +81,26 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
   Receiving objects: 100% (9/9), 9.54 KiB | 4.77 MiB/s, done.
   ```
 
+  El comando `git clone` crea una copia local del repositorio en la URL indicada
+  en una carpeta cuyo nombre coincide con el nombre del repositorio. Para
+  moverte a esa carpeta, usa el siguiente comando:
+
+  ```bash
+  cd <nombre-repositorio>
+  ```
+
+  > El <nombre-repositorio> es el que hayan elegido en el paso 1. Pueden ver
+  > todas las carpetas en el directorio actual con los comandos `ls`
+  > ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white)
+  > y
+  > ![linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
+  > o `dir`
+  > ![windows](https://img.shields.io/badge/Windows-0078D6?style=flat&logo=windows&logoColor=white).
+
 3. **Crear ramas para cada uno**
 
 - Cada estudiante crea su propia rama para la operación que va a implementar con
-  , [git checkout](https://git-scm.com/docs/git-checkout), ejecutando el
+  [git checkout](https://git-scm.com/docs/git-checkout), ejecutando el
   siguiente comando en la terminal:
 
   ```bash
@@ -96,22 +113,6 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
   > - feature-subtraction
   > - feature-multiplication
   > - feature-division
-
-  El comando `git checkout` crea una copia local del repositorio indicado en una
-  carpeta cuyo nombre coincide con el del repositorio. Para moverte a esa
-  carpeta, usa el siguiente comando:
-
-  ```bash
-  cd <nombre-repositorio>
-  ```
-
-  > El <nombre-repositorio> es el que hayan elegido en el paso 1. Puedes ver
-  > todas las carpetas en el directorio actual con los comandos `ls`
-  > ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white)
-  > y
-  > ![linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
-  > o `dir`
-  > ![windows](https://img.shields.io/badge/Windows-0078D6?style=flat&logo=windows&logoColor=white).
 
   Git muestra un mensaje similar al siguiente:
 
@@ -263,6 +264,19 @@ recuperarlos—; como los cambios son temporales, tampoco quieres "comitearlos".
 
   Nuevamente, puede ser necesario cerrar y volver a abrir el archivo
   `Program.cs` para ver reflejados los cambios en Rider.
+
+Git muestra un mensaje similar al siguiente:
+
+```bash
+On branch '<nombre-rama>'
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/Program/Program.cs
+
+```
+
+Resolveremos esto a continuación.
 
 7. **Enviar los cambios**
 
