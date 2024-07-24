@@ -20,7 +20,8 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
 [stash](https://git-scm.com/docs/git-stash) y
 [push](https://git-scm.com/docs/git-push).
 
-> [!NOTE] El código provisto inicialmente en este repositorio no compila; los
+> [!NOTE]
+> El código provisto inicialmente en este repositorio no compila; los
 > cambios que harás con tu equipo durante esta actividad lograrán que compile y
 > funcione.
 
@@ -47,7 +48,8 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
 
 2. **Clonar el Repositorio**
 
-  > [!TIP] Te recomendamos que elijas una carpeta -o que crees una nueva- para
+  > [!TIP]
+  > Te recomendamos que elijas una carpeta -o que crees una nueva- para
   > todos los repositorios del curso. Recuerda cómo llegar a esa capeta desde la
   > línea de comandos -puedes volver consultar [este
   > documento](https://github.com/ucudal/PII_Comandos/blob/master/Consola.md) si
