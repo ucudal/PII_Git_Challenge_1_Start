@@ -1,12 +1,4 @@
-﻿namespace Ucu.Poo.GitChallenge;
-
-public static class Program
-{
-    public static void Main()
-    {
-        Console.WriteLine(Suma.Sumar(1, 2));
-        Console.WriteLine(Resta.Restar(3, 4));
-        Console.WriteLine(Multiplicacion.Multiplicar(5, 6));
-        Console.WriteLine(Division.Dividir(7, 8));
-    }
-}
+﻿Console.WriteLine(Addition.Add(7, 2));
+Console.WriteLine(Substraction.Substract(10, 1));
+Console.WriteLine(Multiplication.Multiply(3, 3));
+Console.WriteLine(Division.Divide(18, 2));

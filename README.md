@@ -2,13 +2,15 @@
 width="150"/>
 
 # Universidad Católica del Uruguay
-## Facultad de Ingeniería y Tecnologías
-### Programación II
 
+## Facultad de Ingeniería y Tecnologías
+
+### Programación II
 
 # Desafío Git #1: Calculadora Colaborativa
 
 ## Objetivo
+
 Crear una aplicación de calculadora simple en C# donde cada estudiante del
 equipo contribuya con una operación diferente (suma, resta, multiplicación,
 división). Los estudiantes practicarán los siguientes comandos de Git:
@@ -27,7 +29,7 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
 
 ## Pasos
 
-1. **Crear un repositorio a partir de esta plantilla**
+### 1. Crear un repositorio a partir de esta plantilla
 
   Para trabajar en un proyecto en Git debes tener un repositorio. Puedes crear
   localmente un repositorio y luego subirlo a un servidor para que tus
@@ -42,12 +44,12 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
   en la opción `Create a new repository`.
 - En el cuadro de texto `Repository name`, ese estudiante escribe un nombre para
   el repositorio -puede usar el que quiera, incluso el que le sugiere GitHub,
-  mientras sea único en la organización-; no deben cambiar ninguna otra opción.
+  mientras sea único en la organización-; no cambien ninguna otra opción.
 - Verán en el navegador el nuevo repositorio, con este mismo contenido.
   Compartan en el equipo el link al repositorio. Continúen con los pasos a
   continuación.
 
-2. **Clonar el Repositorio**
+### 2. Clonar el repositorio
 
   > [!TIP]
   > Te recomendamos que elijas una carpeta -o que crees una nueva- para
@@ -73,7 +75,7 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
   aparecerá el nombre que eligieron al crear el repositorio en el paso 1:
 
   ```bash
-  Clonando en '<nombre-repositorio>'...
+  Cloning into '<nombre-repositorio>'...
   remote: Enumerating objects: 9, done.
   remote: Counting objects: 100% (9/9), done.
   remote: Compressing objects: 100% (8/8), done.
@@ -97,7 +99,7 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
   > o `dir`
   > ![windows](https://img.shields.io/badge/Windows-0078D6?style=flat&logo=windows&logoColor=white).
 
-3. **Crear ramas para cada uno**
+### 3. Crear ramas para cada uno
 
 - Cada estudiante crea su propia rama para la operación que va a implementar con
   [git checkout](https://git-scm.com/docs/git-checkout), ejecutando el
@@ -120,7 +122,7 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
   Switched to a new branch '<nombre-rama>'
   ```
 
-4. **Implementar la operación**
+### 4. Implementar la operación
 
 - Cada estudiante abre el repositorio en Rider con el siguiente comando:
 
@@ -148,10 +150,11 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
   > tiempo- en Git.
 
   Estudiante A (suma):
+
   ```csharp
-  public class Suma
+  public class Addition
   {
-     public static int Sumar(int a, int b)
+     public static int Add(int a, int b)
      {
          return a + b;
      }
@@ -159,10 +162,11 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
   ```
 
   Estudiante B (resta):
+
   ```csharp
-  public class Resta
+  public class Substraction
   {
-     public static int Restar(int a, int b)
+     public static int Substract(int a, int b)
      {
          return a - b;
      }
@@ -170,10 +174,11 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
   ```
 
   Estudiante C (multiplicación):
+
   ```csharp
-  public class Multiplicacion
+  public class Multiplication
   {
-     public static int Multiplicar(int a, int b)
+     public static int Multiply(int a, int b)
      {
          return a * b;
      }
@@ -181,20 +186,22 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
   ```
 
   Estudiante D (división):
+
   ```csharp
   public class Division
   {
-     public static double Dividir(int a, int b)
+     public static double Divide(int a, int b)
      {
          return (double)a / b;
      }
   }
   ```
 
-5. **Agregar y "comitear" los cambios**
+### 5. Agregar y hacer *commit* de los cambios
 
-> El verbo `comitear` no existe, pero los desarrolladores lo usamos igual y
-> entre nosotros nos entendemos 😀.
+> En lugar de "hacer *commit*" a veces decimos "comitear". El verbo "comitear"
+> no existe, pero los desarrolladores lo usamos igual y entre nosotros nos
+> entendemos 😀.
 
 - Después de implementar sus operaciones, los estudiantes agregan y comitean sus
   cambios con [git add](https://git-scm.com/docs/git-add) y [git
@@ -214,7 +221,7 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
   > que aparece abajo a la izquierda. De forma predeterminada, la terminal del
   > Rider se abre en la carpeta raíz del proyecto que tienes abierto.
 
-6. **Guardar temporalmente los cambios**
+### 6. Guardar temporalmente los cambios
 
 Vamos a suponer que mientras estás realizando cambios en el repositorio, sin
 haber finalizado tu trabajo, debes hacer modificaciones sin perder los cambios
@@ -278,7 +285,7 @@ Changes not staged for commit:
 
 Resolveremos esto a continuación.
 
-7. **Enviar los cambios**
+### 7. Enviar los cambios
 
 Hasta ahora estuvieron trabajando en la copia local del repositorio, es
 necesario enviar los cambios al repositorio que está en el servidor.
@@ -320,7 +327,7 @@ necesario enviar los cambios al repositorio que está en el servidor.
   ...
   ```
 
-8. **Obtener cambios y "mergear"**
+### 8. Obtener cambios y "mergear"
 
 > El verbo mergear tampoco existe, pero al igual que sucede con comitear, los
 > desarrolladores lo usamos y nos entendemos entre nosotros 😀.
@@ -421,38 +428,30 @@ Después de "mergear" todas las contribuciones de los miembros del equipo, el
 programa debería verse más o menos así:
 
 ```csharp
-namespace Ucu.Poo.GitChallenge;
+Console.WriteLine(Addition.Add(7, 2));
+Console.WriteLine(Substraction.Substract(10, 1));
+Console.WriteLine(Multiplication.Multiply(3, 3));
+Console.WriteLine(Division.Divide(18, 2));
 
-public static class Program
+public class Addition
 {
-    public static void Main()
-    {
-        Console.WriteLine(Suma.Sumar(1, 2));
-        Console.WriteLine(Resta.Restar(3, 4));
-        Console.WriteLine(Multiplicacion.Multiplicar(5, 6));
-        Console.WriteLine(Division.Dividir(7, 8));
-    }
-}
-
-public class Suma
-{
-    public static int Sumar(int a, int b)
+    public static int Add(int a, int b)
     {
         return a + b;
     }
 }
 
-public class Resta
+public class Substraction
 {
-    public static int Restar(int a, int b)
+    public static int Substract(int a, int b)
     {
         return a - b;
     }
 }
 
-public class Multiplicacion
+public class Multiplication
 {
-    public static int Multiplicar(int a, int b)
+    public static int Multiply(int a, int b)
     {
         return a * b;
     }
@@ -460,7 +459,7 @@ public class Multiplicacion
 
 public class Division
 {
-    public static double Dividir(int a, int b)
+    public static double Divide(int a, int b)
     {
         return (double)a / b;
     }
