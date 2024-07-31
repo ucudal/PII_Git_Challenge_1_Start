@@ -19,7 +19,8 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
 [pull](https://git-scm.com/docs/git-pull),
 [add](https://git-scm.com/docs/git-add),
 [commit](https://git-scm.com/docs/git-commit),
-[stash](https://git-scm.com/docs/git-stash) y
+[stash](https://git-scm.com/docs/git-stash),
+[merge](https://git-scm.com/docs/git-merge) y
 [push](https://git-scm.com/docs/git-push).
 
 > [!NOTE]
@@ -327,20 +328,21 @@ necesario enviar los cambios al repositorio que está en el servidor.
   ...
   ```
 
-### 8. Obtener cambios y "mergear"
+### 8. Obtener cambios y hacer *merge*
 
-> El verbo mergear tampoco existe, pero al igual que sucede con comitear, los
-> desarrolladores lo usamos y nos entendemos entre nosotros 😀.
+> En lugar de "hacer merge" a veces decimos "mergear". El verbo mergear tampoco
+> existe, pero al igual que sucede con comitear, los desarrolladores lo usamos y
+> nos entendemos entre nosotros 😀.
 
-Ahora llegó el momento de "mergear" —combinar— los cambios en las ramas de
+Ahora llegó el momento de hacer *merge* —combinar— los cambios en las ramas de
 trabajo con la rama principal. Antes de "mergear" sus cambios deben obtener los
 cambios de los compañeros. Dependiendo del orden en el que hagan el trabajo,
 puede haber conflictos, que deberán resolver.
 
-- Antes de "mergear" sus ramas, cada estudiante debe obtener los últimos cambios
-  de la rama `main`. Usa [git checkout](https://git-scm.com/docs/git-checkout)
-  para cambiar la rama actual a `main`; ejecuta los siguientes comandos en la
-  terminal:
+- Antes de hacer *merge* de sus ramas, cada estudiante debe obtener los últimos
+  cambios de la rama `main`. Usa [git
+  checkout](https://git-scm.com/docs/git-checkout) para cambiar la rama actual a
+  `main`; ejecuta los siguientes comandos en la terminal:
 
   ```bash
   git checkout main
@@ -424,8 +426,8 @@ puede haber conflictos, que deberán resolver.
 
 ## Ejemplo final de código
 
-Después de "mergear" todas las contribuciones de los miembros del equipo, el
-programa debería verse más o menos así:
+Después de hacer *merge* de todas las contribuciones de los miembros del equipo,
+el programa debería verse más o menos así:
 
 ```csharp
 Console.WriteLine(Addition.Add(7, 2));
