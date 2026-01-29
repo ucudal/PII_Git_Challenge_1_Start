@@ -92,13 +92,13 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
   cd <nombre-repositorio>
   ```
 
-  > El <nombre-repositorio> es el que hayan elegido en el paso 1. Pueden ver
-  > todas las carpetas en el directorio actual con los comandos `ls`
+  > El nombre del repositorio es el que hayan elegido en el paso [1. Crear un repositorio a partir de esta plantilla](#1-crear-un-repositorio-a-partir-de-esta-plantilla). Pueden ver
+  > todas las carpetas en el directorio actual con los comandos `ls` en
   > ![macOS](https://img.shields.io/badge/macOS-000000?style=flat&logo=apple&logoColor=white)
   > y
   > ![linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
-  > o `dir`
-  > ![windows](https://img.shields.io/badge/Windows-0078D6?style=flat&logo=windows&logoColor=white).
+  > o `dir` en
+  > ![windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white).
 
 ### 3. Crear ramas para cada uno
 
@@ -112,10 +112,10 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
 
   > El <nombre-rama> corresponde a la operación que cada estudiante va a
   > implementar; es uno de los siguientes:
-  > - feature-addition
-  > - feature-subtraction
-  > - feature-multiplication
-  > - feature-division
+  > - suma
+  > - resta
+  > - multiplica
+  > - divide
 
   Git muestra un mensaje similar al siguiente:
 
@@ -204,11 +204,11 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
 > no existe, pero los desarrolladores lo usamos igual y entre nosotros nos
 > entendemos 😀.
 
-- Después de implementar sus operaciones, los estudiantes agregan y comitean sus
-  cambios con [git add](https://git-scm.com/docs/git-add) y [git
+- Después de implementar sus operaciones, todos los estudiantes agregan y hacen
+  *commit* de sus cambios con [git add](https://git-scm.com/docs/git-add) y [git
   commit](https://git-scm.com/docs/git-commit), ejecutando los siguientes
   comandos en la terminal; noten que hay un punto, precedido de un espacio, al
-  final del comando:
+  final del comando `git add`:
 
   ```bash
   git add .
@@ -227,7 +227,7 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
 Vamos a suponer que mientras estás realizando cambios en el repositorio, sin
 haber finalizado tu trabajo, debes hacer modificaciones sin perder los cambios
 que has hecho hasta el momento —es decir, tienen que poder volver a
-recuperarlos—; como los cambios son temporales, tampoco quieres "comitearlos".
+recuperarlos—; como los cambios son temporales, tampoco quieres hacer *commit*.
 
 - Cada estudiante agrega la siguiente línea de comentario inmediatamente antes
   del código que agregaron en el paso anterior:
@@ -252,7 +252,7 @@ recuperarlos—; como los cambios son temporales, tampoco quieres "comitearlos".
     ```
 
 - Guarda estos cambios temporalmente con [git
-  stash](https://git-scm.com/docs/git-stash), sin "comitearlos", para poder
+  stash](https://git-scm.com/docs/git-stash), sin hacer *commit*, para poder
   realizar otras modificaciones.
 
   ```bash
@@ -275,7 +275,7 @@ recuperarlos—; como los cambios son temporales, tampoco quieres "comitearlos".
 
 Git muestra un mensaje similar al siguiente:
 
-```bash
+```text
 On branch '<nombre-rama>'
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -286,20 +286,21 @@ Changes not staged for commit:
 
 Resolveremos esto a continuación.
 
-### 7. Enviar los cambios
+### 7. Enviar los cambios al repositorio remoto
 
 Hasta ahora estuvieron trabajando en la copia local del repositorio, es
 necesario enviar los cambios al repositorio que está en el servidor.
 
-- Cada estudiante agrega y "comitea" los últimos cambios —el comentario que
-  agregaron en el paso anterior-:
+- Cada estudiante agrega y hace *commit* de los últimos cambios —el comentario
+  que agregaron en el paso anterior-:
 
   ```bash
   git add .
   git commit -m "Comentario agregado"
   ```
 
-  > Noten que hay un espacio, seguido de un punto, al final del comando `add`.
+  > Noten que hay un espacio, seguido de un punto, al final del comando `git
+  > add`.
 
 - Cada estudiante envía sus cambios al repositorio remoto con [git
   push](https://git-scm.com/docs/git-push), ejecutando el siguiente comando en
@@ -310,10 +311,10 @@ necesario enviar los cambios al repositorio que está en el servidor.
   ```
 
   > El `<nombre-rama>` es el que usaron antes; uno de los siguientes:
-  > - feature-addition
-  > - feature-subtraction
-  > - feature-multiplication
-  > - feature-division
+  > - suma
+  > - resta
+  > - multiplica
+  > - divide
 
   Deberías ver varios mensajes, similares, aunque no necesariamente iguales, a
   los siguientes:
@@ -335,9 +336,9 @@ necesario enviar los cambios al repositorio que está en el servidor.
 > nos entendemos entre nosotros 😀.
 
 Ahora llegó el momento de hacer *merge* —combinar— los cambios en las ramas de
-trabajo con la rama principal. Antes de "mergear" sus cambios deben obtener los
-cambios de los compañeros. Dependiendo del orden en el que hagan el trabajo,
-puede haber conflictos, que deberán resolver.
+trabajo con la rama principal. Antes de hacer *merge* de sus cambios, deben
+obtener los cambios de los compañeros. Dependiendo del orden en el que hagan el
+trabajo, puede haber conflictos, que deberán resolver.
 
 - Antes de hacer *merge* de sus ramas, cada estudiante debe obtener los últimos
   cambios de la rama `main`. Usa [git
@@ -360,15 +361,15 @@ puede haber conflictos, que deberán resolver.
     ```
 
   > El `<nombre-rama>` es el que usaron antes; uno de los siguientes:
-  > - feature-addition
-  > - feature-subtraction
-  > - feature-multiplication
-  > - feature-division
+  > - suma
+  > - resta
+  > - multiplica
+  > - divide
 
     En caso de que no haya conflictos, aparecerá un texto como el que mostramos
     a continuación:
 
-    ```bash
+    ```text
     Updating bdd7c4d..fb5eaa0
     Fast-forward
     src/Program/Program.cs | 9 +++++++++
@@ -377,7 +378,7 @@ puede haber conflictos, que deberán resolver.
 
     En caso de que haya conflictos, verán un mensaje como el siguiente:
 
-    ```bash
+    ```text
     Auto-merging src/Program/Program.cs
     CONFLICT (content): Merge conflict in src/Program/Program.cs
     Automatic merge failed; fix conflicts and then commit the result.
@@ -417,9 +418,10 @@ puede haber conflictos, que deberán resolver.
     marcadores. Puedes ver cómo debe quedar el código completo al final de esta
     página.
 
-    Para terminar, "comiteen" y "pusheen" los cambios:
+    Para terminar, hagan *commit* y *push* de los cambios:
 
     ```bash
+    git add .
     git commit -m "Resolución de conflictos"
     git push
     ```
