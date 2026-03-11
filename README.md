@@ -133,8 +133,8 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
 
   > Noten que hay un punto, separado por un espacio, al final del comando.
 
-  Rider les pedirá que confirmen si quieren abrir el proyecto en esa carpeta;
-  elijan la opción `Open`. Eventualmente, Rider también les preguntará si es
+  Visual Studio les pedirá que confirmen si quieren abrir el proyecto en esa carpeta;
+  elijan la opción `Open`. Eventualmente, Visual Studio también les preguntará si es
   seguro abrir el proyecto; elijan la opción `Trust and Open`.
 
 - Cada estudiante implementa su respectiva operación en una nueva clase en C#,
