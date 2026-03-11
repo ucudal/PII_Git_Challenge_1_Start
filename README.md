@@ -46,6 +46,8 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
 - En el cuadro de texto `Repository name`, ese estudiante escribe un nombre para
   el repositorio -puede usar el que quiera, incluso el que le sugiere GitHub,
   mientras sea único en la organización-; no cambien ninguna otra opción.
+- El encargado de crear el repositorio, debe ir al menú `Settings`y en a la opción `Collaborators`
+  agregar el resto de los integrantes como colaboradores del repositorio.
 - Verán en el navegador el nuevo repositorio, con este mismo contenido.
   Compartan en el equipo el link al repositorio. Continúen con los pasos a
   continuación.
