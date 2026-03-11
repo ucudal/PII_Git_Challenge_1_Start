@@ -125,10 +125,10 @@ división). Los estudiantes practicarán los siguientes comandos de Git:
 
 ### 4. Implementar la operación
 
-- Cada estudiante abre el repositorio en Rider con el siguiente comando:
+- Cada estudiante abre el repositorio en Visual Studio Code con el siguiente comando:
 
   ```bash
-  rider .
+  code .
   ```
 
   > Noten que hay un punto, separado por un espacio, al final del comando.
